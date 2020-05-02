@@ -9,4 +9,4 @@ Astrology sign generating segment of app for final project for OPIM 244.
 ### Usage
 
 
-### Web App Usage 
+## Web App Usage 

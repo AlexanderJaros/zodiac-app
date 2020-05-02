@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 import requests
 
 def get_sign(sun_sign):
@@ -7,5 +6,3 @@ def get_sign(sun_sign):
     response = requests.get(request_url)
     parsed_response = json.loads(response.text)
     return print(parsed_response)
-    #soup = BeautifulSoup(response.text, "html.parser")
-    #return print(soup)
