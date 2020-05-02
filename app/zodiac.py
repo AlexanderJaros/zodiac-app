@@ -1,6 +1,9 @@
 import requests
 import json
 import os
+from flask import Flask
+
+app = Flask(__name__)
 
 months = ["January", "February", "March", "April", "May", "June", "July", "August," "September", "October", "November", "December", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
 
@@ -87,14 +90,21 @@ while True:
     	    sun_sign = "Scorpio" if (DAY < 22) else "Sagittarius"
     break
 
-print(f"Your child's strological sign is : " + astro_sign)
+print(f"Your child's strological sign is: " + sun_sign)
 
-request_url = f"http://horoscope-api.herokuapp.com/horoscope/year/{sun_sign}"
+#request_url = f"http://horoscope-api.herokuapp.com/horoscope/year/{sun_sign}"
+request_url = f"https://zodiacal.herokuapp.com/{sun_sign}"
 
 response = requests.get(request_url)
 
-print(response)
-
 parsed_response = json.loads(response.text)
 
-print(parsed_response)
+# If error message occurs
+
+if "Error Message" in response.text:
+    print("Oops, the app ran into an error. Please run it again!")
+    exit()
+
+good_traits = parsed_response[''][0]
+
+print(good_traits)
