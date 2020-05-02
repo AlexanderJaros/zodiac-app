@@ -1,17 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 
-
-#name = input("Please enter your baby's first name: ")
-#sex = input("Please enter your baby's sex as either 'M' or 'F': ")
-
-def ssa_scrape(name, sex): #https://stackoverflow.com/questions/52835681/how-can-i-run-a-python-script-from-within-flask
-    request_url = "https://www.ssa.gov/cgi-bin/babyname.cgi"
-    params = {"name": name, "sex": sex}
-    response = requests.post(request_url, params)
-    #print(response.status_code)
-    soup = BeautifulSoup(response.text, "html.parser")
-    return print(soup)
-
-# todo:
-# soup = BeautifulSoup(response.text)
+def get_sign(sun_sign):
+    request_url = f"https://zodiacal.herokuapp.com/{sun_sign}"
+    #params = {"sun_sign": sun_sign)
+    response = requests.get(request_url)
+    parsed_response = json.loads(response.text)
+    return print(parsed_response)
+    #soup = BeautifulSoup(response.text, "html.parser")
+    #return print(soup)

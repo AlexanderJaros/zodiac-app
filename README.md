@@ -1,5 +1,5 @@
 # zodiac-app
-Astrologt sign generating segment of app for final project for OPIM 244.
+Astrology sign generating segment of app for final project for OPIM 244.
 
 ## Setup
 

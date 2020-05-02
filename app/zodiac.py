@@ -95,8 +95,3 @@ while True:
     break
 
 get_sign(sun_sign)
-
-#request_url = f"https://zodiacal.herokuapp.com/{sun_sign}"
-#response = requests.get(request_url)
-#parsed_response = json.loads(response.text)
-#print(parsed_response)
