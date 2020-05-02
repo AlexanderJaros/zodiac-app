@@ -1,0 +1,33 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "home" %}
+
+{% block content %}
+
+    <h2>Home</h2>
+
+    <p>Welcome, parents, to our app! We hope to help you learn more about your baby.</p>
+
+
+    
+    <h1>Please enter their name and sex...</h1>
+
+    <p>...and then click "Submit"!</p>
+
+    <form name="name_input" method="POST" action=".">
+
+        <label>First Name:</label>
+        <input type="text" name="name" placeholder="John" value="John">
+        <br>
+
+        <label>Sex:</label>
+        <select name="sex">
+            <option value="M" selected="true">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Submit">
+        
+    </form>
+
+{% endblock %}
